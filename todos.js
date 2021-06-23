@@ -1,6 +1,14 @@
-<% include header %>
-
-    <div>
-        <h3><img src="https://res.cloudinary.com/computer-know-how/image/upload/v1588764034/Gravitee", alt="Testing Image")</h3>
-    </div>
- <% include footer %>
+module.exports = [
+  {
+    id: 1,
+    task: "Fix Sink"
+  },
+  {
+    id: 2,
+    task: "Buy Groceries"
+  },
+  {
+    id: 3,
+    task: "Wash the dishes"
+  }
+];
