@@ -1,14 +1,1 @@
-module.exports = [
-  {
-    id: 1,
-    task: "Fix Sink"
-  },
-  {
-    id: 2,
-    task: "Buy Groceries"
-  },
-  {
-    id: 3,
-    task: "Wash the dishes"
-  }
-];
+<img class="logo" src="https://res.cloudinary.com/computer-know-how/image/upload/v1588764034/Gravitee" alt="My_Logo">
