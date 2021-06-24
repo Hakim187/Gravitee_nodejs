@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  heroku: circleci/heroku@0.0.10
+  herohakim: circleci/heroku@0.0.10
 jobs: 
 
   Gravitee_job2:
@@ -49,7 +49,7 @@ workflows:
       - Hakim_hello:
           requires:
             - Gravitee_job
-      - heroku/deploy-via-git:
+      - herohakim/deploy-via-git:
           requires: 
             - Hakim_hello
             - Gravitee_job2
