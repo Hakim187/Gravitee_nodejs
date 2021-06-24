@@ -53,7 +53,7 @@ workflows:
   Gravitee_test:
     jobs:
       - Gravitee_job2
-      - Gravitee_job
+      - Gravitee_job:
           context: Hakim-CICD
       - Hakim_hello:
           requires:
