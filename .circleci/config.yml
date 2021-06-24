@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   herohakim: circleci/heroku@0.0.10
+  #Helmtest:  circleci/helm@1.2.0
 jobs: 
 
   Gravitee_job2:
@@ -48,10 +49,13 @@ jobs:
           name: "affichage de mon varibale secret"
           command: |
                     echo "mon secret heroku est : [${mon_secret}]"
+      - helm/install-helm-client:
+          version: v2.16.9
       - run:
           name: "vérifier l'installation Helm"
           command: |
                      helm version
+                   
           
                    
 workflows:
@@ -67,4 +71,5 @@ workflows:
           requires: 
             - Hakim_hello
             - Gravitee_job2
+      
       
