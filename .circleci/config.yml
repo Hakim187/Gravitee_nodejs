@@ -13,6 +13,7 @@ jobs:
           name: "What is the name of job?"
           command: |
                     echo "The name of the job is : [${JOB_NAME}]"
+                    sleep 20s
   Gravitee_job:
     docker:
       - image: 'cimg/node:16.3.0'
@@ -44,9 +45,7 @@ workflows:
   Gravitee_test:
     jobs:
       - Gravitee_job2
-      - Gravitee_job:
-          requires:
-            - Gravitee_job2
+      - Gravitee_job
       - Hakim_hello:
           requires:
             - Gravitee_job
