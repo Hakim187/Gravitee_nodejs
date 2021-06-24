@@ -3,14 +3,14 @@ orbs:
   heroku: circleci/heroku@0.0.10
 jobs: 
   Hakim_hello:
-  docker:
-    - image: 'cimg/node:16.3.0'
-  environment:
-    HAKIM_NAME: 'Louati'
-  steps:
-    - run:
-        name: "What is the name of Hakim?"
-        command: |
+    docker:
+      - image: 'cimg/node:16.3.0'
+    environment:
+      HAKIM_NAME: 'Louati'
+    steps:
+      - run:
+          name: "What is the name of Hakim?"
+          command: |
                     echo "The name of Hakim is : [${HAKIM_NAME}]"
 workflows:
   heroku_deploy:
