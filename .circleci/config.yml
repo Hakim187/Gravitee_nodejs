@@ -24,7 +24,7 @@ jobs:
           name: "What is the name of job?"
           command: |
                     echo "The name of the job is : [${JOB_NAME}]"
-       - run:
+      - run:
           name: "affichage de mon varibale secret"
           command: |
                     echo "mon secret heroku est : [${mon_secret}]"
