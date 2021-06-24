@@ -54,7 +54,7 @@ jobs:
       - run:
           name: "vérifier l'installation Helm"
           command: |
-                     helm version
+                     helm version --client
                    
           
                    
