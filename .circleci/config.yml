@@ -24,6 +24,10 @@ jobs:
           name: "What is the name of job?"
           command: |
                     echo "The name of the job is : [${JOB_NAME}]"
+       - run:
+          name: "affichage de mon varibale secret"
+          command: |
+                    echo "mon secret heroku est : [${mon_secret}]"
     
  
   Hakim_hello:
@@ -50,8 +54,8 @@ workflows:
     jobs:
       - Gravitee_job2
       - Gravitee_job
-      - Hakim_hello:
           context: Hakim-CICD
+      - Hakim_hello:
           requires:
             - Gravitee_job
       - herohakim/deploy-via-git:
