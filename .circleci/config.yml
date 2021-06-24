@@ -51,6 +51,7 @@ workflows:
       - Gravitee_job2
       - Gravitee_job
       - Hakim_hello:
+          context: Hakim-CICD
           requires:
             - Gravitee_job
       - herohakim/deploy-via-git:
