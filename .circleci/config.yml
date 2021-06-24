@@ -49,9 +49,9 @@ jobs:
           command: |
                     echo "mon secret heroku est : [${mon_secret}]"
       - run:
-          name: "vérifier l'installation JQ"
+          name: "vérifier l'installation Helm"
           command: |
-                     jq -Version
+                     helm version
           
                    
 workflows:
