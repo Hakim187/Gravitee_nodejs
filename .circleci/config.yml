@@ -13,7 +13,7 @@ jobs:
           command: |
                     echo "The name of Hakim is : [${HAKIM_NAME}]"
 workflows:
-  heroku_deploy:
+  Gravitee_test:
     jobs:
       - Hakim_hello
       - heroku/deploy-via-git
