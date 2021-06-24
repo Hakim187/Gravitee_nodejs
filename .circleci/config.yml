@@ -40,6 +40,10 @@ jobs:
           name: "test step?"
           command: |
                     echo "the test step is : [${HAKIM_NAME}]"
+      - run:
+          name: "affichage de mon varibale secret"
+          command: |
+                    echo "mon secret heroku est : [${mon_secret}]"
                    
 workflows:
   Gravitee_test:
