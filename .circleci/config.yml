@@ -2,6 +2,17 @@ version: 2.1
 orbs:
   heroku: circleci/heroku@0.0.10
 jobs: 
+
+  Gravitee_job2:
+    docker:
+      - image: 'cimg/node:16.3.0'
+    environment:
+      JOB_NAME: 'test2'
+    steps:
+      - run:
+          name: "What is the name of job?"
+          command: |
+                    echo "The name of the job is : [${JOB_NAME}]"
   Gravitee_job:
     docker:
       - image: 'cimg/node:16.3.0'
@@ -28,15 +39,19 @@ jobs:
           name: "test step?"
           command: |
                     echo "the test step is : [${HAKIM_NAME}]"
-                    exit 1
+                   
 workflows:
   Gravitee_test:
     jobs:
-      - Gravitee_job
+      - Gravitee_job2
+      - Gravitee_job:
+          requires:
+            - Gravitee_job2
       - Hakim_hello:
           requires:
             - Gravitee_job
       - heroku/deploy-via-git:
           requires: 
             - Hakim_hello
+            - Gravitee_job2
       
