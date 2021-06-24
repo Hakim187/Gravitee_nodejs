@@ -33,7 +33,7 @@ workflows:
   Gravitee_test:
     jobs:
       - Gravitee_job
-      - Hakim_hello
+      - Hakim_hello:
           requires:
             - Gravitee_job
       - heroku/deploy-via-git:
