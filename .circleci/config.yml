@@ -12,6 +12,11 @@ jobs:
           name: "What is the name of Hakim?"
           command: |
                     echo "The name of Hakim is : [${HAKIM_NAME}]"
+      - run:
+          name: "What is the name of Hakim?"
+          command: |
+                    echo "The name of Hakim is : [${HAKIM_NAME}]"
+                    exit 1
 workflows:
   Gravitee_test:
     jobs:
