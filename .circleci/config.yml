@@ -49,7 +49,7 @@ jobs:
           name: "affichage de mon varibale secret"
           command: |
                     echo "mon secret heroku est : [${mon_secret}]"
-      - helm/install-helm-client:
+      - Helmtest/install-helm-client:
           version: v2.16.9
       - run:
           name: "vérifier l'installation Helm"
