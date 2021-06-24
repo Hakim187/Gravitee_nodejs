@@ -48,6 +48,11 @@ jobs:
           name: "affichage de mon varibale secret"
           command: |
                     echo "mon secret heroku est : [${mon_secret}]"
+      - run:
+          name: "vérifier l'installation JQ"
+          command: |
+                     jq -Version
+          
                    
 workflows:
   Gravitee_test:
