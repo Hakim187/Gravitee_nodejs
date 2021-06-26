@@ -71,5 +71,3 @@ workflows:
           requires: 
             - Hakim_hello
             - Gravitee_job2
-      
-      
