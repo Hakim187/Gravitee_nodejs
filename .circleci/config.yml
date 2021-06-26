@@ -1,75 +1,7 @@
 version: 2.1
 orbs:
-  herohakim: circleci/heroku@0.0.10
-  Helmtest:  circleci/helm@1.2.0
-jobs: 
-
-  Gravitee_job2:
-    docker:
-      - image: 'cimg/node:16.3.0'
-    environment:
-      JOB_NAME: 'test2'
-    steps:
-      - run:
-          name: "What is the name of job?"
-          command: |
-                    echo "The name of the job is : [${JOB_NAME}]"
-                    sleep 20s
-  Gravitee_job:
-    docker:
-      - image: 'cimg/node:16.3.0'
-    environment:
-      JOB_NAME: 'test'
-    steps:
-      - run:
-          name: "What is the name of job?"
-          command: |
-                    echo "The name of the job is : [${JOB_NAME}]"
-      - run:
-          name: "affichage de mon varibale secret"
-          command: |
-                    echo "mon secret heroku est : [${mon_secret}]"
-    
- 
-  Hakim_hello:
-    docker:
-      - image: 'cimg/node:16.3.0'
-    environment:
-      HAKIM_NAME: 'Louati'
-    steps:
-      - run:
-          name: "What is the name of Hakim?"
-          command: |
-                    echo "The name of Hakim is : [${HAKIM_NAME}]"
-      - run:
-          name: "test step?"
-          command: |
-                    echo "the test step is : [${HAKIM_NAME}]"
-      - run:
-          name: "affichage de mon varibale secret"
-          command: |
-                    echo "mon secret heroku est : [${mon_secret}]"
-      - Helmtest/install-helm-client:
-          version: v2.16.9
-      - run:
-          name: "vérifier l'installation Helm"
-          command: |
-                     helm version --client
-                   
-          
-                   
+  heroku: circleci/heroku@0.0.10
 workflows:
-  Gravitee_test:
+  heroku_deploy:
     jobs:
-      - Gravitee_job2
-      - Gravitee_job:
-          context: Hakim-CICD
-      - Hakim_hello:
-          requires:
-            - Gravitee_job
-      - herohakim/deploy-via-git:
-          requires: 
-            - Hakim_hello
-            - Gravitee_job2
-      
-      
+      - heroku/deploy-via-git
